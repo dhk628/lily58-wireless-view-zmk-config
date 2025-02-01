@@ -105,7 +105,7 @@
 
         symbols_left {
             bindings = <
-&trans        &trans  &trans  &trans                &trans                 &trans                               &trans     &trans         &trans  &trans         &trans  &trans
+&trans        &trans  &trans  &trans                &trans                 &trans                               &trans     &trans         &trans  &trans         &trans  &bootloader
 &trans        &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE                             &trans     &trans         &trans  &trans         &trans  &trans
 &kp CAPSLOCK  &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AMPERSAND                        &kp TILDE  &kp BACKSLASH  &none   &kp BACKSPACE  &trans  &trans
 &trans        &trans  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PERCENT    &trans     &trans     &trans     &trans         &trans  &trans         &trans  &trans
@@ -117,11 +117,11 @@
 
         symbols_right {
             bindings = <
-&trans  &trans  &trans             &trans  &trans            &trans                          &trans       &trans         &trans            &trans           &trans  &trans
-&trans  &trans  &trans             &trans  &trans            &trans                          &kp AT_SIGN  &kp LESS_THAN  &kp GREATER_THAN  &trans           &trans  &trans
-&trans  &trans  &kp DOUBLE_QUOTES  &none   &kp SINGLE_QUOTE  &kp GRAVE                       &kp HASH     &kp MINUS      &kp PLUS          &kp EXCLAMATION  &trans  &trans
-&trans  &trans  &trans             &trans  &trans            &trans     &trans    &trans     &kp CARET    &kp SLASH      &kp ASTERISK      &trans           &trans  &trans
-                                   &trans  &trans            &trans     &trans    &kp EQUAL  &trans       &trans         &trans
+&bootloader  &trans  &trans             &trans  &trans            &trans                          &trans       &trans         &trans            &trans           &trans  &trans
+&trans       &trans  &trans             &trans  &trans            &trans                          &kp AT_SIGN  &kp LESS_THAN  &kp GREATER_THAN  &trans           &trans  &trans
+&trans       &trans  &kp DOUBLE_QUOTES  &none   &kp SINGLE_QUOTE  &kp GRAVE                       &kp HASH     &kp MINUS      &kp PLUS          &kp EXCLAMATION  &trans  &trans
+&trans       &trans  &trans             &trans  &trans            &trans     &trans    &trans     &kp CARET    &kp SLASH      &kp ASTERISK      &trans           &trans  &trans
+                                        &trans  &trans            &trans     &trans    &kp EQUAL  &trans       &trans         &trans
             >;
 
             label = "sym_right";
