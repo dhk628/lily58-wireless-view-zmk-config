@@ -20,24 +20,6 @@
             flavor = "balanced";
         };
 
-        latex_openbrak: latex_openbrak {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LATEX_OPENBRAK";
-            #binding-cells = <0>;
-            bindings = <&latex_openmathmode>, <&latex_openset>;
-
-            tapping-term-ms = <200>;
-        };
-
-        latex_closebrak: latex_closebrak {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LATEX_CLOSEBRAK";
-            #binding-cells = <0>;
-            bindings = <&latex_closemathmode>, <&latex_closeset>;
-
-            tapping-term-ms = <200>;
-        };
-
         home_row_layer_right: home_row_layer_right {
             compatible = "zmk,behavior-hold-tap";
             label = "HOME_ROW_LAYER_RIGHT";
@@ -48,35 +30,16 @@
             flavor = "balanced";
             hold-trigger-key-positions = <6 7 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 43 44 45 46 47 48 49 54 55 56 57 8 28 26 53 50 52 51 25 29>;
         };
-    };
 
-    macros {
-        latex_openmathmode: latex_openmathmode {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSLASH &kp LEFT_BRACKET>;
-            label = "LATEX_OPENMATHMODE";
-        };
+        thumb_layer: thumb_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_LAYER";
+            bindings = <&mo>, <&kp>;
 
-        latex_closemathmode: latex_closemathmode {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSLASH &kp RIGHT_BRACKET>;
-            label = "LATEX_CLOSEMATHMODE";
-        };
-
-        latex_openset: latex_openset {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSLASH &kp LEFT_BRACE>;
-            label = "LATEX_OPENSET";
-        };
-
-        latex_closeset: latex_closeset {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSLASH &kp RIGHT_BRACE>;
-            label = "LATEX_CLOSESET";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
         };
     };
 
@@ -93,11 +56,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3                     &kp N4        &kp N5                                 &kp N6     &kp N7          &kp N8                    &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB    &kp Q   &kp W   &kp E                      &kp R         &kp T                                  &kp Y      &kp U           &kp I                     &kp O    &kp P     &kp BACKSLASH
-&kp LCTRL  &kp A   &kp S   &home_row_layer_right 2 D  &kp F         &kp G                                  &kp H      &kp J           &home_row_layer_left 1 K  &kp L    &kp SEMI  &kp ENTER
-&kp LSHFT  &kp Z   &kp X   &kp C                      &kp V         &kp B   &latex_openbrak    &kp DELETE  &kp N      &kp M           &kp COMMA                 &kp DOT  &kp FSLH  &kp RSHFT
-                           &kp LEFT_GUI               &kp LEFT_ALT  &mo 3   &kp SPACE          &kp SPACE   &kp UNDER  &kp LEFT_ARROW  &kp RIGHT_ARROW
+&kp ESC    &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                            &kp N6         &kp N7          &kp N8           &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB    &kp Q   &kp W   &kp E         &kp R         &kp T                             &kp Y          &kp U           &kp I            &kp O    &kp P     &kp BACKSLASH
+&kp LCTRL  &kp A   &kp S   &kp D         &kp F         &kp G                             &kp H          &kp J           &kp K            &kp L    &kp SEMI  &kp ENTER
+&kp LSHFT  &kp Z   &kp X   &kp C         &kp V         &kp B    &none        &kp DELETE  &kp N          &kp M           &kp COMMA        &kp DOT  &kp FSLH  &kp RSHFT
+                           &kp LEFT_GUI  &kp LEFT_ALT  &kp TAB  &kp SPACE    &kp ENTER   &kp BACKSPACE  &kp LEFT_ARROW  &kp RIGHT_ARROW
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -105,11 +68,11 @@
 
         symbols_left {
             bindings = <
-&none         &kp F1  &kp F2  &kp F3                &kp F4                 &kp F5                                      &kp F6         &kp F7         &kp F8  &kp F9  &kp F10  &bootloader
-&none         &none   &none   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE                                    &none          &none          &none   &none   &none    &none
-&kp CAPSLOCK  &none   &none   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AMPERSAND                               &kp TILDE      &kp BACKSLASH  &none   &none   &none    &none
-&none         &none   &none   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PERCENT    &none             &none      &none          &none          &none   &none   &none    &none
-                              &none                 &none                  &kp RIGHT      &kp LEFT_ARROW    &kp ENTER  &kp BACKSPACE  &none          &none
+&none         &kp F1  &kp F2  &kp F3                &kp F4                 &kp F5                              &kp F6     &kp F7         &kp F8     &kp F9  &kp F10  &bootloader
+&none         &none   &none   &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE                            &none      &none          &none      &none   &none    &none
+&kp CAPSLOCK  &none   &none   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AMPERSAND                       &kp TILDE  &kp BACKSLASH  &kp COLON  &none   &none    &none
+&none         &none   &none   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PERCENT     &none        &none  &none      &none          &none      &none   &none    &none
+                              &none                 &kp RIGHT              &kp LEFT_ARROW  &kp UNDER    &none  &none      &none          &none
             >;
 
             label = "SymL";
@@ -117,11 +80,11 @@
 
         symbols_right {
             bindings = <
-&bootloader  &kp F1  &kp F2             &kp F3  &kp F4            &kp F5                         &kp F6       &kp F7         &kp F8            &kp F9           &kp F10  &none
-&none        &none   &none              &none   &none             &none                          &kp AT_SIGN  &kp LESS_THAN  &kp GREATER_THAN  &none            &none    &none
-&none        &none   &kp DOUBLE_QUOTES  &none   &kp SINGLE_QUOTE  &kp GRAVE                      &kp HASH     &kp MINUS      &kp PLUS          &kp EXCLAMATION  &none    &none
-&none        &none   &none              &none   &none             &none      &none    &none      &kp CARET    &kp SLASH      &kp ASTERISK      &none            &none    &none
-                                        &none   &none             &none      &none    &kp EQUAL  &none        &none          &none
+&bootloader  &kp F1  &kp F2  &kp F3             &kp F4            &kp F5                         &kp F6       &kp F7         &kp F8            &kp F9           &kp F10  &none
+&none        &none   &none   &none              &none             &none                          &kp AT_SIGN  &kp LESS_THAN  &kp GREATER_THAN  &none            &none    &none
+&none        &none   &none   &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp GRAVE                      &kp HASH     &kp MINUS      &kp PLUS          &kp EXCLAMATION  &none    &none
+&none        &none   &none   &none              &none             &none      &none    &none      &kp CARET    &kp SLASH      &kp ASTERISK      &none            &none    &none
+                             &none              &none             &none      &none    &kp EQUAL  &none        &none          &none
             >;
 
             label = "SymR";
