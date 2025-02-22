@@ -82,6 +82,13 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
+        alt_tap_dance: alt_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ALT_TAP_DANCE";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT>, <&kp RIGHT_ALT>;
+        };
     };
 
     keymap {
@@ -101,7 +108,7 @@
 &kp TAB              &kp Q                          &kp W                              &kp E                            &kp R                     &kp T                                   &kp Y          &kp U                      &kp I                              &kp O                                &kp P                                    &kp BACKSLASH
 &kp LCTRL            &home_row_mod_left LEFT_ALT A  &home_row_mod_left LEFT_CONTROL S  &home_row_mod_left LEFT_SHIFT D  &home_row_layer_left 2 F  &kp G                                   &kp H          &home_row_layer_right 1 J  &home_row_mod_right RIGHT_SHIFT K  &home_row_mod_right RIGHT_CONTROL L  &home_row_mod_right RIGHT_ALT SEMICOLON  &kp ENTER
 &kp LSHFT            &kp Z                          &kp X                              &kp C                            &kp V                     &kp B   &magic_tap_dance    &kp DELETE  &kp N          &kp M                      &kp COMMA                          &kp DOT                              &kp FSLH                                 &kp RSHFT
-                                                                                       &kp LEFT_GUI                     &kp LEFT_ALT              &mo 3   &kp ENTER           &kp SPACE   &kp BACKSPACE  &kp LEFT_ARROW             &kp RIGHT_ARROW
+                                                                                       &kp LEFT_GUI                     &alt_tap_dance            &mo 3   &kp ENTER           &kp SPACE   &kp BACKSPACE  &kp LEFT_ARROW             &kp RIGHT_ARROW
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -121,11 +128,11 @@
 
         symbols_right {
             bindings = <
-&bootloader  &kp F1  &kp F2  &kp F3     &kp F4  &kp F5                             &kp F6         &kp F7                &kp F8                 &kp F9      &kp F10  &none
-&none        &none   &none   &none      &none   &none                              &kp PIPE       &kp LEFT_BRACE        &kp RIGHT_BRACE        &none       &none    &none
-&none        &none   &none   &kp COLON  &none   &none                              &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR  &none    &none
-&none        &none   &none   &none      &none   &none     &none     &none          &kp PERCENT    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none       &none    &none
-                             &none      &none   &kp LEFT  &trans    &kp BACKSLASH  &kp RIGHT      &none                 &none
+&bootloader  &kp F1  &kp F2     &kp F3     &kp F4  &kp F5                             &kp F6         &kp F7                &kp F8                 &kp F9      &kp F10  &none
+&none        &none   &none      &none      &none   &none                              &kp PIPE       &kp LEFT_BRACE        &kp RIGHT_BRACE        &none       &none    &none
+&none        &none   &kp TILDE  &kp COLON  &none   &none                              &kp AMPERSAND  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOLLAR  &none    &none
+&none        &none   &none      &none      &none   &none     &none     &none          &kp PERCENT    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none       &none    &none
+                                &none      &none   &kp LEFT  &trans    &kp BACKSLASH  &kp RIGHT      &none                 &none
             >;
 
             label = "SymR";
@@ -157,11 +164,11 @@
 
         misc {
             bindings = <
-&none  &to 3         &to 4         &none         &none  &none                       &none  &none  &none  &none  &none  &bt BT_CLR_ALL
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &none                       &none  &none  &none  &none  &none  &none
-&none  &none         &none         &none         &none  &none                       &none  &none  &none  &none  &none  &none
-&none  &none         &none         &none         &none  &none  &bt BT_CLR    &none  &none  &none  &none  &none  &none  &none
-                                   &none         &none  &none  &none         &none  &none  &none  &none
+&none  &to 3         &to 4         &none         &none         &none                               &none  &none  &none  &none  &none  &bt BT_CLR_ALL
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                        &none  &none  &none  &none  &none  &none
+&none  &none         &none         &none         &none         &none                               &none  &none  &none  &none  &none  &none
+&none  &none         &none         &none         &none         &none         &bt BT_CLR     &none  &none  &none  &none  &none  &none  &none
+                                   &none         &none         &none         &kp C_POWER    &none  &none  &none  &none
             >;
 
             label = "Misc";
