@@ -91,6 +91,25 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        jk_right {
+            bindings = <&kp RIGHT>;
+            key-positions = <31 32>;
+        };
+
+        df_left {
+            bindings = <&kp LEFT>;
+            key-positions = <28 27>;
+        };
+
+        kl_underscore {
+            bindings = <&kp UNDER>;
+            key-positions = <32 33>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
