@@ -94,19 +94,39 @@
     combos {
         compatible = "zmk,combos";
 
-        jk_right {
+        jk {
             bindings = <&kp RIGHT>;
             key-positions = <31 32>;
         };
 
-        df_left {
+        df {
             bindings = <&kp LEFT>;
             key-positions = <28 27>;
         };
 
-        kl_underscore {
+        kl {
             bindings = <&kp UNDER>;
             key-positions = <32 33>;
+        };
+
+        sd {
+            bindings = <&kp LS(LA(LC(F10)))>;
+            key-positions = <26 27>;
+        };
+
+        fj {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <28 31>;
+        };
+
+        fg {
+            bindings = <&kp LS(LA(LC(F9)))>;
+            key-positions = <28 29>;
+        };
+
+        hj {
+            bindings = <&kp ESCAPE>;
+            key-positions = <30 31>;
         };
     };
 
