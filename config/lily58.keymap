@@ -95,13 +95,13 @@
         compatible = "zmk,combos";
 
         jk {
-            bindings = <&kp RIGHT>;
+            bindings = <&kp BACKSLASH>;
             key-positions = <31 32>;
             layers = <0>;
         };
 
         df {
-            bindings = <&kp LEFT>;
+            bindings = <&kp TAB>;
             key-positions = <28 27>;
             layers = <0>;
         };
@@ -119,7 +119,7 @@
         };
 
         fj {
-            bindings = <&kp BACKSLASH>;
+            bindings = <&kp AT_SIGN>;
             key-positions = <28 31>;
             layers = <0>;
         };
